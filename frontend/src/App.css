@@ -1,0 +1,12 @@
+.App {
+  min-height: 100vh;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background: #2F6BFF;
+  color: white;
+}
