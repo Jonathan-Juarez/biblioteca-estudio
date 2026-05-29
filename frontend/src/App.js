@@ -10,7 +10,6 @@ import {
   GraduationCap,
   Lightbulb,
   NotebookPen,
-  CalendarDays,
   BookCopy,
   Volume2,
   BookMarked,
@@ -41,8 +40,7 @@ const features = [
   { icon: GraduationCap, title: "Escuela Sabática", desc: "Lección diaria al alcance de un clic.", tier: "free" },
   { icon: FileText, title: "Texto y Audio del Himnario", desc: "Letras y audio de los himnos, también offline.", tier: "free" },
   { icon: Heart, title: "Fe de Jesús", desc: "Edición de Carlos E. Aeschlimann H. (1ra ed.).", tier: "free" },
-  { icon: CalendarDays, title: "Reavivados por su Palabra", desc: "Plan de lectura diario #RPSP.", tier: "free" },
-  { icon: NotebookPen, title: "Centro de Estudio", desc: "Notas, marcadores y progreso personal.", tier: "free" },
+  { icon: NotebookPen, title: "Centro de Estudio", desc: "Notas, marcadores y registro de capítulos estudiados con visualización de progreso.", tier: "free" },
   { icon: Music, title: "Himnario con internet", desc: "Acceso directo a himnos en YouTube.", tier: "free" },
   { icon: BookMarked, title: "Diccionario Bíblico", desc: "Definiciones integradas con un toque.", tier: "free" },
   { icon: MessageSquareQuote, title: "Comentario Bíblico Adventista", desc: "CBA disponible para libros seleccionados.", tier: "free" },
@@ -176,12 +174,12 @@ function LandingPage() {
 
             <div className="mt-10 flex items-center gap-6 text-xs text-zinc-500">
               <div>
-                <span className="text-white font-semibold text-lg">18</span>
+                <span className="text-white font-semibold text-lg">17</span>
                 <span className="ml-2">funciones</span>
               </div>
               <div className="h-8 w-px bg-white/10" />
               <div>
-                <span className="text-white font-semibold text-lg">12</span>
+                <span className="text-white font-semibold text-lg">11</span>
                 <span className="ml-2">gratis</span>
               </div>
               <div className="h-8 w-px bg-white/10" />
@@ -227,11 +225,10 @@ function LandingPage() {
               >
                 <span
                   data-testid={`feature-tier-${i}`}
-                  className={`absolute top-4 right-4 text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full ${
-                    isPremium
+                  className={`absolute top-4 right-4 text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full ${isPremium
                       ? "bg-[#2F6BFF]/15 text-[#5B8DEF] border border-[#2F6BFF]/30"
                       : "bg-emerald-400/10 text-emerald-300 border border-emerald-400/20"
-                  }`}
+                    }`}
                 >
                   {isPremium ? "Premium" : "Gratis"}
                 </span>
@@ -250,7 +247,7 @@ function LandingPage() {
         <p className="mt-10 text-xs text-zinc-500 italic max-w-2xl">
           El Comentario Bíblico Adventista está parcialmente disponible para
           Génesis, Éxodo, Levítico, Números, Deuteronomio (1–5), Isaías y Efesios.
-          La Lección, el Himnario online y la IA requieren conexión a internet.
+          La Lección, el Himnario en línea y la IA requieren conexión a internet.
         </p>
       </section>
 
@@ -289,8 +286,7 @@ function LandingPage() {
                 "Lección de Escuela Sabática",
                 "Texto y Audio del Himnario",
                 "Fe de Jesús (Aeschlimann, 1ra ed.)",
-                "Reavivados por su Palabra",
-                "Centro de Estudio (notas y marcadores)",
+                "Centro de Estudio (notas, marcadores y progreso)",
                 "Himnario con internet (YouTube)",
                 "Diccionario Bíblico",
                 "Comentario Bíblico Adventista",
@@ -574,10 +570,10 @@ function PrivacyPage() {
       <Section title="2. Conexiones a internet">
         <p>Algunas funciones requieren acceso a internet para operar:</p>
         <ul className="space-y-2.5">
-          <Bullet>El <strong className="text-white">Asistente con IA</strong> envía las preguntas que escribes a un proveedor de modelos de lenguaje para devolver una respuesta.</Bullet>
-          <Bullet>El <strong className="text-white">Himnario con internet</strong> abre los himnos correspondientes directamente en YouTube.</Bullet>
-          <Bullet>La <strong className="text-white">Lección de Escuela Sabática</strong> y el plan <strong className="text-white">Reavivados por su Palabra</strong> se consumen dinámicamente desde servidores web externos.</Bullet>
-          <Bullet>La descarga de versiones bíblicas con copyright se realiza desde servidores externos públicos.</Bullet>
+          <Bullet>El <strong className="text-white">Asistente de Inteligencia Artificial (IA)</strong> requiere conexión a internet para enviar tus preguntas a los servidores del proveedor de modelos de lenguaje y devolver las respuestas.</Bullet>
+          <Bullet>Las <strong className="text-white">Herramientas de Estudio</strong> (Diccionario Bíblico, Lección de la Escuela Sabática, Letras y Audios de Himnos y Comentario Bíblico Adventista) por defecto operan en modo en línea (más lentos y menos precisos), consumiendo dinámicamente desde servidores web externos. Sin embargo, si descargas sus respectivas bases de datos locales, estas funciones pasarán a operar de manera <strong className="text-white">100% offline</strong> sin consumir internet.</Bullet>
+          <Bullet>La <strong className="text-white">descarga de bases de datos</strong> requiere internet solo durante el proceso de descarga inicial.</Bullet>
+          <Bullet>El <strong className="text-white">Himnario en línea</strong> requiere acceso a internet para abrir los himnos directamente en YouTube.</Bullet>
         </ul>
       </Section>
 
@@ -596,7 +592,7 @@ function PrivacyPage() {
           <Bullet><strong className="text-white">Escuela Sabática:</strong> Estructura técnica provista por la comunidad de código abierto de Adventech. El contenido de la Guía de Estudio de la Biblia es propiedad intelectual y marca registrada de la General Conference of Seventh-day Adventists®.</Bullet>
           <Bullet><strong className="text-white">Comentario Bíblico:</strong> Indexación basada en repositorios públicos de la comunidad en la web (La Biblia y su Estudio). Los derechos del Comentario Bíblico Adventista original pertenecen a Pacific Press Publishing Association y a la Asociación Publicadora Interamericana (IADPA).</Bullet>
           <Bullet><strong className="text-white">Fe de Jesús:</strong> Texto del curso bíblico del autor Carlos E. Aeschlimann, propiedad intelectual registrada y protegida de sus casas editoras oficiales (GEMA Editores / IADPA).</Bullet>
-          <Bullet><strong className="text-white">Diccionario Bíblico:</strong> Motor de búsqueda local optimizado mediante un analizador sintáctico propietario. Los textos corresponden a compendios académicos tradicionales de uso comunitario.</Bullet>
+          <Bullet><strong className="text-white">Diccionario Bíblico:</strong> Basado en Easton's Bible Dictionary (1897) y Smith's Bible Dictionary (1863), de dominio público. Procesado por NEUU (CC BY 4.0). Traducción automática al español.</Bullet>
           <Bullet><strong className="text-white">Fondos Dinámicos:</strong> Imágenes gratuitas obtenidas de Unsplash.</Bullet>
         </ul>
       </Section>
