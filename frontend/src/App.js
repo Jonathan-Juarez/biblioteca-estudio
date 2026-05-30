@@ -28,9 +28,9 @@ import {
   ShieldCheck,
   Scale,
 } from "lucide-react";
+import heroImage from "@/assets/home.png";
 
-const HERO_IMAGE =
-  "https://customer-assets.emergentagent.com/job_study-connect-64/artifacts/41a7zvdw_image.png";
+const HERO_IMAGE = heroImage;
 
 const features = [
   { icon: BookOpen, title: "5 versiones de la Biblia", desc: "RVR60, RVR95, NVI, DHH y PDT incluidas.", tier: "free" },
