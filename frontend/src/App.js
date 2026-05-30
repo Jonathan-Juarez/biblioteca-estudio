@@ -179,7 +179,7 @@ function LandingPage() {
               </div>
               <div className="h-8 w-px bg-white/10" />
               <div>
-                <span className="text-white font-semibold text-lg">11</span>
+                <span className="text-white font-semibold text-lg">10</span>
                 <span className="ml-2">gratis</span>
               </div>
               <div className="h-8 w-px bg-white/10" />
