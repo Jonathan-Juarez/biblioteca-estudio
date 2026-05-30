@@ -36,7 +36,6 @@ const features = [
   { icon: BookOpen, title: "5 versiones de la Biblia", desc: "RVR60, RVR95, NVI, DHH y PDT incluidas.", tier: "free" },
   { icon: Search, title: "Búsqueda rápida", desc: "Localiza libros y versículos en segundos.", tier: "free" },
   { icon: ScanSearch, title: "Búsqueda avanzada", desc: "Filtra por palabras, frases y combinaciones.", tier: "free" },
-  { icon: Sparkles, title: "Asistente con IA", desc: "Resuelve dudas y profundiza pasajes al instante.", tier: "free" },
   { icon: GraduationCap, title: "Escuela Sabática", desc: "Lección diaria al alcance de un clic.", tier: "free" },
   { icon: FileText, title: "Texto y Audio del Himnario", desc: "Letras y audio de los himnos, también offline.", tier: "free" },
   { icon: Heart, title: "Fe de Jesús", desc: "Edición de Carlos E. Aeschlimann H. (1ra ed.).", tier: "free" },
@@ -45,6 +44,7 @@ const features = [
   { icon: BookMarked, title: "Diccionario Bíblico", desc: "Definiciones integradas con un toque.", tier: "free" },
   { icon: MessageSquareQuote, title: "Comentario Bíblico Adventista", desc: "CBA disponible para libros seleccionados.", tier: "free" },
   { icon: BookCopy, title: "Modo Dual", desc: "Compara dos versiones de la Biblia lado a lado.", tier: "premium" },
+  { icon: Sparkles, title: "Asistente con IA", desc: "Resuelve dudas y profundiza pasajes al instante.", tier: "premium" },
   { icon: ImageIcon, title: "Modo Presentación", desc: "Proyecta versículos, el versículo de memoria de la Lección y el Himnario adventista.", tier: "premium" },
   { icon: Sparkle, title: "Personalización de fondos", desc: "Personaliza los fondos para tus presentaciones.", tier: "premium" },
   { icon: Volume2, title: "Lectura de Voz (TTS)", desc: "Escucha la Biblia en tiempo real.", tier: "premium" },
@@ -226,8 +226,8 @@ function LandingPage() {
                 <span
                   data-testid={`feature-tier-${i}`}
                   className={`absolute top-4 right-4 text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full ${isPremium
-                      ? "bg-[#2F6BFF]/15 text-[#5B8DEF] border border-[#2F6BFF]/30"
-                      : "bg-emerald-400/10 text-emerald-300 border border-emerald-400/20"
+                    ? "bg-[#2F6BFF]/15 text-[#5B8DEF] border border-[#2F6BFF]/30"
+                    : "bg-emerald-400/10 text-emerald-300 border border-emerald-400/20"
                     }`}
                 >
                   {isPremium ? "Premium" : "Gratis"}
@@ -282,7 +282,6 @@ function LandingPage() {
               {[
                 "5 versiones de la Biblia",
                 "Búsqueda rápida y avanzada",
-                "Asistente con IA",
                 "Lección de Escuela Sabática",
                 "Texto y Audio del Himnario",
                 "Fe de Jesús (Aeschlimann, 1ra ed.)",
@@ -329,6 +328,7 @@ function LandingPage() {
               {[
                 "Todo lo del plan Gratuito",
                 "Modo Dual: compara 2 versiones",
+                "Asistente con IA",
                 "Modo Presentación (versículos, memoria e himnos)",
                 "Personalización de fondos para presentar",
                 "Lectura de Voz (TTS)",
